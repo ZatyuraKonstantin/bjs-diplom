@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const logoutButton = new LogoutButton();
 
 LogoutButton.action = () => ApiConnector.logout((response) => {
@@ -25,7 +23,7 @@ LogoutButton.action = () => ApiConnector.logout((response) => {
 
   getExchangeRate();
 
-  setInterval(repeatGetStocks, 60000);
+  setInterval(getExchangeRate, 60000);
 
   const moneyManager = new MoneyManager();
   
